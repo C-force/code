@@ -1,4 +1,7 @@
 # code
 
-### Write Something
-### updated : 2022-07-24
+### 
+### Note: This is not the complete source code. 
+### The rest of the code is being supplemented. 
+
+### updated : 2022-08-03
