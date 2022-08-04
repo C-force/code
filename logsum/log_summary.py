@@ -2,6 +2,7 @@ import re
 import numpy as np
 from union_find import UnionFind
 from tarjan import get_cut_nodes_and_edges
+from queue import Queue
 
 Format_Regex = {
     "Number":re.compile(r'^(?P<left>\D*[^\w-]+|)(?P<value>-?\d+(\.\d+)?)(?P<right>|\W\D*)$'),
@@ -517,6 +518,39 @@ def get_structured_match_result(logsum,graph,log,update_model=True):
     }
     return match_obj
 
+def get_conn_id(logsum,edge):
+    conn_id = logsum.uf.find(edge_addin_attr[str(edge)]["id"])-1
+    return conn_id
+
+def search_header_by_frequency(graph,logsum,header_format):
+    ground_truth = header_format.replace(" <Content>","").strip()
+    ground_truth_names = ground_truth.split(" ")
+    header_length = len(ground_truth_names)
+    num_all_logs = list(graph.root.son.values())[0].cnt
+    eq = Queue()
+    eq.put(graph.root)
+    depth_map = {str(graph.root):0}
+    depth_edge_list = []
+    while not eq.empty():
+        node = eq.get()
+        cur_depth = depth_map[str(node)]
+        for edge in node.son.values():
+            if len(depth_edge_list)<=cur_depth:
+                depth_edge_list.append(set())
+            conn_id = get_conn_id(logsum,edge)
+            var = logsum.variable_map[conn_id]
+            depth_edge_list[cur_depth].add(var)
+            if str(edge.v) not in depth_map:
+                eq.put(edge.v)
+                depth_map[str(edge.v)] = cur_depth+1
+    print(ground_truth_names,header_length)
+    max_header_length = 64
+    header_score = []
+    for k in range(1,min(len(depth_edge_list),max_header_length)):
+        top_score = max([item.frequent/num_all_logs for item in depth_edge_list[k]])
+        header_score.append(top_score)
+        print("Header:" if k<=header_length else "Content:",top_score)
+    return ground_truth_names,header_score
 
 
 
