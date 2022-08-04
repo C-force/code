@@ -1,0 +1,22 @@
+<*> # # # INFO dfs.DataNode$PacketResponder: PacketResponder # for block <*> terminating <*>
+<*> # # # INFO <*> Received block <*> of size # from /#.#.#.# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* ask #.#.#.#:# to delete <*> blk_-# <*> blk_-# blk_-# blk_-# # # # <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: <*> blk_-# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* NameSystem.allocateBlock: <*> # <*>
+<*> # # # INFO dfs.DataBlockScanner: Verification succeeded for blk_-# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* NameSystem.delete: <*> is added to invalidSet of #.#.#.#:# <*>
+<*> # # # INFO dfs.DataNode$DataXceiver: Receiving block <*> src: /#.#.#.#:# dest: /#.#.#.#:# <*>
+<*> # # # INFO dfs.FSDataset: Deleting block <*> file /mnt/hadoop/dfs/data/current/#/# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* ask #.#.#.#:# to delete <*> blk_-# <*> blk_-# blk_-# blk_-# blk_-# blk_-# blk_-# # blk_-# blk_-# # blk_-# blk_-# blk_-# # blk_-# # blk_-# blk_-# # blk_-# blk_-# blk_-# # # # blk_-# blk_-# # # # # # blk_-# blk_-# # # # blk_-# blk_-# # # # # blk_-# # blk_-# blk_-# blk_-# blk_-# # # # # blk_-# blk_-# blk_-# blk_-# blk_-# blk_-# # # # blk_-# # # blk_-# # # # # # # # blk_-# blk_-# # # blk_-# blk_-# blk_-# blk_-# blk_-# # blk_-# blk_-# # blk_-# blk_-# # # # blk_-# # # blk_-# # blk_-# <*>
+<*> # # # INFO dfs.DataNode$DataXceiver: #.#.#.#:# Served block <*> to /#.#.#.# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* ask #.#.#.#:# to delete <*>
+<*> # # # INFO dfs.DataBlockScanner: Verification succeeded for # <*>
+<*> # # # INFO dfs.DataNode: #.#.#.#:# Starting thread to transfer block # to #.#.#.#:# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* ask #.#.#.#:# to replicate blk_-# to datanode(s) #.#.#.#:# <*>
+<*> # # # INFO <*> Received block <*> src: /#.#.#.#:# dest: /#.#.#.#:# of size # <*>
+<*> # # # INFO dfs.FSDataset: Deleting block <*> file /mnt/hadoop/dfs/data/current/#/blk_-# <*>
+<*> # # # INFO dfs.FSDataset: Deleting block <*> file /mnt/hadoop/dfs/data/current/# <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: #.#.#.#:# is added to <*> size # <*>
+<*> # # # INFO dfs.FSNamesystem: BLOCK* ask #.#.#.#:# to delete <*> blk_-# <*> # # # blk_-# blk_-# # # blk_-# # # blk_-# blk_-# blk_-# blk_-# # # blk_-# # blk_-# # blk_-# # # blk_-# blk_-# blk_-# blk_-# # blk_-# blk_-# # blk_-# blk_-# # # blk_-# # # # # # blk_-# blk_-# # # # # # blk_-# # blk_-# # # blk_-# # blk_-# blk_-# blk_-# blk_-# blk_-# blk_-# # # blk_-# blk_-# # # blk_-# blk_-# # blk_-# # blk_-# blk_-# # # # # blk_-# # # blk_-# blk_-# # # blk_-# # blk_-# blk_-# blk_-# blk_-# # # blk_-# # # blk_-# <*>
+<*> # # # INFO dfs.FSDataset: Deleting block <*> file /mnt/hadoop/dfs/data/current/blk_-# <*>
+<*> # # # WARN dfs.DataNode$DataXceiver: #.#.#.#:#:Got exception while serving <*> to /#.#.#.#: <*>

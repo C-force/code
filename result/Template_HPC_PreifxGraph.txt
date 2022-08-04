@@ -1,0 +1,44 @@
+<*> # <*> # # Component State Change: Component <*> is in the unavailable state (HWID=#) <*>
+<*> # Interconnect-# switch_module <*> # # Temperature (#) exceeds warning threshold <*>
+<*> # <*> # # NIFF: node node-# detected a failed network connection on network #.#.#.# via interface # <*>
+<*> # <*> <*> active <*>
+<*> # Interconnect-# switch_module <*> # # Link error on broadcast tree Interconnect-#:#:#:# <*>
+<*> # <*> <*> not responding <*>
+<*> # # <*> # # Command has completed successfully <*>
+<*> # Interconnect-# switch_module <*> # # link errors remain current <*>
+<*> # # <*> # # Targeting domains:node-# and nodes:node-# <*>
+<*> # <*> <*> closing <*>
+<*> # <*> <*> # psu failure\ ambient=# <*>
+<*> # <*> <*> -# configured out <*>
+<*> # # <*> # # Targeting domains:node-# and nodes:node-[#-#] child of command # <*>
+<*> # Interconnect-# switch_module <*> # # Link ok <*>
+<*> # <*> <*> not-responding <*>
+<*> # <*> <*> running <*>
+<*> # Interconnect-# switch_module fan # # Fan speeds ( # # # <*> # # ) <*>
+<*> # <*> <*> # ServerFileSystem: ServerFileSystem domain # is full <*>
+<*> # <*> <*> -# running <*>
+<*> # <*> <*> configured out <*>
+<*> # <*> # <*> (command #) Error: HALT asserted\ cannot continue <*>
+<*> # <*> <*> inconsistent nodesets node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> <*>
+<*> # # <*> # # Targeting domains:node-D[#\ #] and nodes:node-[#\ #] <*>
+<*> # <*> # # <*> There is no server for ServerFileSystem domain # <*>
+<*> # # <*> # # Failed subcommands # <*>
+<*> # <*> # # <*> ServerFileSystem domain panic has occurred on # <*>
+<*> # <*> <*> ambient=# <*>
+<*> # <*> <*> inconsistent nodesets node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> <*>
+<*> # # shutdown_cmd new # # Targeting domains:node-# and nodes:node-[#\ #\ #] <*>
+<*> # <*> # # NIFF: node node-# has detected an available network connection on network #.#.#.# via interface # <*>
+<*> # Interconnect-# switch_module <*> # power/control problem <*>
+<*> # # <*> # # critical <*>
+<*> # Interconnect-# switch_module <*> # # Linkerror event interval expired <*>
+<*> # <*> # <*> (command #) Error: Timed out while waiting for SRM prompt: <ABORT code completed> <*>
+<*> # Interconnect-# switch_module <*> # # Link error <*>
+<*> # <*> <*> blocked <*>
+<*> # <*> (command #) <*>
+<*> # <*> <*> inconsistent nodesets node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> node-# # <ok> <*>
+<*> # Interconnect-# switch_module <*> # # Link in reset <*>
+<*> # # <*> # # Command has been aborted <*>
+<*> # <*> # # <*> ServerFileSystem domain <*> is no longer served by node node-# <*>
+<*> # # <*> # # warning <*>
+<*> # # <*> # # normal <*>
+<*> # <*> <*> starting <*>

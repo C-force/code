@@ -1,0 +1,123 @@
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.#: adding path spec: /ws/* <*>
+<*> #-#-# #:#:#,# INFO [ContainerLauncher ##] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MININT-#.fareast.corp.microsoft.com:# <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Added # to list of failed maps <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: The <*> file on the remote FS is hdfs://msra-sa-#:#/tmp/hadoop-yarn/staging/msrabi/.staging/#/job.jar <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.factories.impl.pb.RpcServerFactoryPBImpl: Adding protocol org.apache.hadoop.mapreduce.#.api.MRClientProtocolPB to the server <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.#: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context mapreduce <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Task succeeded with attempt # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$SpeculatorEventDispatcher <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.rm.RMContainerRequestor: nodeBlacklistingEnabled:true <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to SETUP <*>
+<*> #-#-# #:#:#,# INFO [IPC Server handler # on #] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Progress of TaskAttempt # is : #.# <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to FAILED <*>
+<*> #-#-# #:#:#,# ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: ERROR IN CONTACTING RM. <*>
+<*> #-#-# #:#:#,# FATAL [IPC Server handler # on #] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Task: # - exited : java.net.NoRouteToHostException: No Route to Host from MININT-#/#.#.#.# to msra-sa-#:# failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see: http://wiki.apache.org/hadoop/NoRouteToHost <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : # <*>
+<*> #-#-# #:#:#,# INFO [DefaultSpeculator background processing] org.apache.hadoop.mapreduce.#.app.speculate.DefaultSpeculator: We launched # speculations. Sleeping # milliseconds. <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.commit.CommitterEventHandler <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.job.impl.JobImpl: Number of reduces for job # = # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.job.impl.JobImpl: Input size for job # = #. Number of splits = # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: MRAppMaster launching normal, non-uberized, multi-container job #. <*>
+<*> #-#-# #:#:#,# INFO [main] org.mortbay.log: Started #$SelectChannelConnectorWithSafeStartup@#.#.#.#:# <*>
+<*> #-#-# #:#:#,# INFO [CommitterEvent Processor ##] org.apache.hadoop.mapreduce.#.app.commit.CommitterEventHandler: Processing the event EventType: TASK_ABORT <*>
+<*> #-#-# #:#:#,# INFO [IPC Server handler # on #] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID: # given task: # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.#: Added filter AM_PROXY_FILTER (class=org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter) to context static <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to FAIL_CONTAINER_CLEANUP <*>
+<*> #-#-# #:#:#,# INFO [main] org.mortbay.log: Logging to org.#.impl.#(org.mortbay.log) via org.mortbay.log.# <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: Executing with tokens: <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: Size of containertokens_dob is # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$TaskAttemptEventDispatcher <*>
+<*> #-#-# #:#:#,# INFO [ContainerLauncher ##] org.apache.hadoop.mapreduce.#.app.launcher.ContainerLauncherImpl: Processing the event EventType: <*> for container # taskAttempt # <*>
+<*> #-#-# #:#:#,# WARN <*> for file /tmp/hadoop-yarn/staging/msrabi/.staging/#/#.jhist block BP-#-#.#.#.#-#:#] org.apache.hadoop.hdfs.DFSClient: Error Recovery for block BP-#-#.#.#.#-#:# in pipeline #.#.#.#:#, #.#.#.#:#: bad datanode #.#.#.#:# <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.client.RMProxy: Connecting to ResourceManager at msra-sa-#/#.#.#.#:# <*>
+<*> #-#-# #:#:#,# INFO [IPC Server handler # on #] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Done acknowledgement from # <*>
+<*> #-#-# #:#:#,# INFO [ContainerLauncher ##] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : #.fareast.corp.microsoft.com:# <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Scheduling a redundant attempt for task # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: OutputCommitter set in config null <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerRequestor: getResources() for #: ask=# release= # newContainers=# finishedContainers=# resourcelimit=<memory:#, vCores:-#> knownNMs=# <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: All maps assigned. Ramping up all remaining reduces:# <*>
+<*> #-#-# #:#:#,# WARN [CommitterEvent Processor ##] org.apache.hadoop.mapreduce.#.app.commit.CommitterEventHandler: Task cleanup failed for attempt # <*>
+<*> #-#-# #:#:#,# INFO [IPC Server handler # on #] org.apache.hadoop.mapred.TaskAttemptListenerImpl: Diagnostics report from #: Error: java.net.NoRouteToHostException: No Route to Host from MININT-#/#.#.#.# to msra-sa-#:# failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see: http://wiki.apache.org/hadoop/NoRouteToHost <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$JobFinishEventHandler <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to RUNNING <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: queue: default <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: Adding ## tokens and ## secret keys for NM use for launching container <*>
+<*> #-#-# #:#:#,# INFO [ContainerLauncher ##] org.apache.hadoop.mapreduce.#.app.launcher.ContainerLauncherImpl: <*> # <*>
+<*> #-#-# #:#:#,# INFO [main] org.mortbay.log: jetty-#.#.# <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.launcher.ContainerLauncherImpl: Upper limit on the thread pool size is # <*>
+<*> #-#-# #:#:#,# INFO [IPC Server handler # on #] org.apache.hadoop.mapred.TaskAttemptListenerImpl: JVM with ID : # asked for a task <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.#: Added global filter 'safety' (class=org.apache.hadoop.http.#$QuotingInputFilter) <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to SCHEDULED <*>
+<*> #-#-# #:#:#,# INFO [main] org.mortbay.log: Extract jar:file:/D:/hadoop-#.#.#-localbox/share/hadoop/yarn/hadoop-yarn-common-#.#.#-SNAPSHOT.jar!/webapps/mapreduce to C:\Users\msrabi\AppData\Local\Temp\#.#\webapp <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: <*> Scheduling: PendingReds:# ScheduledMaps:# ScheduledReds:# AssignedMaps:# AssignedReds:# CompletedMaps:# CompletedReds:# ContAlloc:# ContRel:# HostLocal:# RackLocal:# <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to SUCCEEDED <*>
+<*> #-#-# #:#:#,# ERROR [RMCommunicator Allocator] org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Container complete event for unknown container id # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.client.MRClientService: Instantiated MRClientService at MININT-#.fareast.corp.microsoft.com/#.#.#.#:# <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: <*> container # <*>
+<*> #-#-# #:#:#,# INFO [DefaultSpeculator background processing] org.apache.hadoop.mapreduce.#.app.speculate.DefaultSpeculator: DefaultSpeculator.addSpeculativeAttempt -- we are speculating # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.#.impl.MetricsConfig: loaded properties from hadoop-#.properties <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: TaskAttempt: [#] using containerId: [# on NM: [MSRA-SA-#.fareast.corp.microsoft.com:#] <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to UNASSIGNED <*>
+<*> #-#-# #:#:#,# INFO [CommitterEvent Processor ##] org.apache.hadoop.mapreduce.#.app.commit.CommitterEventHandler: Processing the event EventType: JOB_SETUP <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: <*> vCores:#> <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.jobhistory.JobHistoryUtils: Default file system [hdfs://msra-sa-#:#] <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.ipc.CallQueueManager: Using callQueue class java.util.concurrent.LinkedBlockingQueue <*>
+<*> #-#-# #:#:#,# WARN <*> for file /tmp/hadoop-yarn/staging/msrabi/.staging/#/#.jhist block BP-#-#.#.#.#-#:#] org.apache.hadoop.hdfs.DFSClient: DataStreamer Exception <*>
+<*> #-#-# #:#:#,# ERROR [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Error writing History Event: org.apache.hadoop.mapreduce.jobhistory.TaskAttemptUnsuccessfulCompletionEvent@# <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: Created MRAppMaster for application # <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Reduce slow start threshold not met. completedMapsForReduceSlowstart # <*>
+<*> #-#-# #:#:#,# INFO [ContainerLauncher ##] org.apache.hadoop.yarn.client.api.impl.ContainerManagementProtocolProxy: Opening proxy : MSRA-SA-#.fareast.corp.microsoft.com:# <*>
+<*> #-#-# #:#:#,# WARN <*> for block BP-#-#.#.#.#-#:#] org.apache.hadoop.hdfs.DFSClient: Slow ReadProcessor read fields took # (threshold=#); ack: seqno: -# status: SUCCESS status: ERROR downstreamAckTimeNanos: #, targets: [#.#.#.#:#, #.#.#.#:#] <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Recalculating schedule, headroom=<memory:#, vCores:-#> <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Got allocated containers # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.#.impl.MetricsSystemImpl: Scheduled snapshot period at # second(s). <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: maxContainerCapability: <memory:#, vCores:#> <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Reduce slow start threshold reached. Scheduling reduces. <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: Diagnostics report from #: Error: java.net.NoRouteToHostException: No Route to Host from MININT-#/#.#.#.# to msra-sa-#:# failed on socket timeout exception: java.net.NoRouteToHostException: No route to host: no further information; For more details see: http://wiki.apache.org/hadoop/NoRouteToHost <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: TaskAttempt: [#] using containerId: [# on NM: [#.fareast.corp.microsoft.com:#] <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: The <*> file on the remote FS is /tmp/hadoop-yarn/staging/msrabi/.staging/#/job.xml <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.HttpRequestLog: Http request log for http.requests.mapreduce is not defined <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Num completed Tasks: # <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: Diagnostics report from #: Container killed by the ApplicationMaster. <*>
+<*> #-#-# #:#:#,# ERROR [eventHandlingThread] org.apache.hadoop.yarn.YarnUncaughtExceptionHandler: Thread Thread[eventHandlingThread,#,main] threw an Exception. <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$ContainerAllocatorRouter <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.job.impl.JobImpl: Adding job token for # to jobTokenSecretManager <*>
+<*> #-#-# #:#:#,# INFO [IPC Server Responder] org.apache.hadoop.ipc.Server: IPC Server Responder: starting <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: <*> container # to # <*>
+<*> #-#-# #:#:#,# WARN [CommitterEvent Processor ##] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-sa-#/#.#.#.#:# New: msra-sa-#:# <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$TaskEventDispatcher <*>
+<*> #-#-# #:#:#,# WARN <*> for file /tmp/hadoop-yarn/staging/msrabi/.staging/#/#.jhist block BP-#-#.#.#.#-#:#] org.apache.hadoop.ipc.Client: Address change detected. Old: msra-sa-#/#.#.#.#:# New: msra-sa-#:# <*>
+<*> #-#-# #:#:#,# INFO [ContainerLauncher ##] org.apache.hadoop.mapreduce.#.app.launcher.ContainerLauncherImpl: Shuffle port returned by ContainerManager for # : # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.job.impl.JobImpl: # Transitioned from NEW to INITED <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.job.impl.JobImpl: Not uberizing # because: not enabled; too many maps; too much input; <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Registered webapp guice modules <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to SUCCESS_CONTAINER_CLEANUP <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.speculate.DefaultSpeculator: <*> # <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.yarn.util.RackResolver: Resolved <*> to /default-rack <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.rm.RMContainerRequestor: <*> is # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$ContainerLauncherRouter <*>
+<*> #-#-# #:#:#,# INFO [Socket Reader ## for port #] org.apache.hadoop.ipc.Server: Starting Socket Reader ## for port # <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: Kind: YARN_AM_RM_TOKEN, Service: , Ident: (appAttemptId { application_id { id: # cluster_timestamp: # } attemptId: # } keyId: -#) <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.#.impl.MetricsSystemImpl: MRAppMaster metrics system started <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.event.AsyncDispatcher: Registering class <*> for class org.apache.hadoop.mapreduce.#.app.MRAppMaster$JobEventDispatcher <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.#: adding path spec: /mapreduce/* <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Emitting job history data to the timeline server is not enabled <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.ipc.Client: Retrying connect to server: msra-sa-#:#. Already tried # time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=#, sleepTime=# MILLISECONDS) <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.yarn.webapp.WebApps: Web app /mapreduce started at # <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.yarn.util.RackResolver: Resolved <*> to /default-rack <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: Putting shuffle token in serviceData <*>
+<*> #-#-# #:#:#,# INFO [eventHandlingThread] org.apache.hadoop.mapreduce.jobhistory.JobHistoryEventHandler: Event Writer setup for JobId: #, File: hdfs://msra-sa-#:#/tmp/hadoop-yarn/staging/msrabi/.staging/#/#.jhist <*>
+<*> #-#-# #:#:#,# WARN <*> for block BP-#-#.#.#.#-#:#] org.apache.hadoop.hdfs.DFSClient: DFSOutputStream ResponseProcessor exception for block BP-#-#.#.#.#-#:# <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerAllocator: Cannot assign container Container: [ContainerId: #, NodeId: MSRA-SA-#.fareast.corp.microsoft.com:#, NodeHttpAddress: MSRA-SA-#.fareast.corp.microsoft.com:#, Resource: <memory:#, vCores:#>, Priority: #, Token: Token { kind: ContainerToken, service: #.#.#.#:# }, ] for a map as either container memory less than required <memory:#, vCores:#> or no pending map tasks - maps.isEmpty=true <*>
+<*> #-#-# #:#:#,# INFO [Socket Reader ## for port #] SecurityLogger.org.apache.hadoop.ipc.Server: Auth successful for # (auth:SIMPLE) <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.http.#: Jetty bound to port # <*>
+<*> #-#-# #:#:#,# WARN [LeaseRenewer:msrabi@msra-sa-#:#] org.apache.hadoop.hdfs.LeaseRenewer: Failed to renew lease for [#] for # seconds. Will retry shortly ... <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to ASSIGNED <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: Using mapred newApiCommitter. <*>
+<*> #-#-# #:#:#,# INFO [main] org.apache.hadoop.mapreduce.#.app.MRAppMaster: OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter <*>
+<*> #-#-# #:#:#,# WARN <*> org.apache.hadoop.ipc.Client: Address change detected. Old: msra-sa-#/#.#.#.#:# New: msra-sa-#:# <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] org.apache.hadoop.mapreduce.#.app.job.impl.TaskAttemptImpl: TaskAttempt: [#] using containerId: [# on NM: [MININT-#.fareast.corp.microsoft.com:#] <*>
+<*> #-#-# #:#:#,# INFO [AsyncDispatcher event handler] <*> Transitioned from <*> to FAIL_TASK_CLEANUP <*>
+<*> #-#-# #:#:#,# INFO <*> org.apache.hadoop.mapreduce.#.app.rm.RMContainerRequestor: # failures on node MININT-#.fareast.corp.microsoft.com <*>
+<*> #-#-# #:#:#,# INFO [IPC Server listener on #] org.apache.hadoop.ipc.Server: IPC Server listener on #: starting <*>

@@ -1,0 +1,46 @@
+<*>
+<*> ClusterFileSystem: ServerFileSystem domain <*> is no longer served by node <*>
+<*> ClusterFileSystem: There is no server for ServerFileSystem domain <*>
+<*> Command has been aborted <*>
+<*> Command has completed successfully <*>
+<*> Component State Change: Component <*> is in the unavailable state <*>
+<*> Failed subcommands <*>
+<*> Fan speeds ( <*> ) <*>
+<*> Fan speeds ( <*> **** <*> ) <*>
+<*> Link error <*>
+<*> Link error on broadcast tree <*>
+<*> Link in reset <*>
+<*> Link ok <*>
+<*> Linkerror event interval expired <*>
+<*> NIFF: node <*> detected a failed network connection on network <*> via interface alt0 <*>
+<*> NIFF: node <*> has detected an available network connection on network <*> via interface alt0 <*>
+<*> NIFF: node <*> has detected an available network connection on network <*> via interface ee0 <*>
+<*> NIFF: node <*> has detected an available network connection on network <*> via interface scip0 <*>
+<*> ServerFileSystem: An ServerFileSystem domain panic has occurred on <*>
+<*> ServerFileSystem: ServerFileSystem domain <*> is full <*>
+<*> Targeting <*>
+<*> Targeting <*> and <*> child of command <*>
+<*> Temperature <*> exceeds warning threshold <*>
+<*> active <*>
+<*> blocked <*>
+<*> boot (command <*>
+<*> boot (command <*> Error: HALT asserted\ cannot continue <*>
+<*> bootGenvmunix (command <*>
+<*> closing <*>
+<*> clusterAddMember (command <*>
+<*> configured out <*>
+<*> critical <*>
+<*> halt (command <*>
+<*> inconsistent nodesets <*> <ok> <*> <ok> <*> <ok> <*>
+<*> link errors remain current <*>
+<*> normal <*>
+<*> not responding <*>
+<*> not-responding <*>
+<*> power/control problem <*>
+<*> psu failure\ <*>
+<*> risBoot (command <*>
+<*> risBoot (command <*> Error: Timed out while waiting for SRM prompt: <ABORT code completed> <*>
+<*> running <*>
+<*> starting <*>
+<*> wait (command <*>
+<*> warning <*>
