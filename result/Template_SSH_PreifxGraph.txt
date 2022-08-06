@@ -1,27 +1,42 @@
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=git <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> check pass; user unknown <*>
-<*> Dec # #:#:# LabSZ sshd[#]: pam_unix(sshd:session): session closed for user fztu <*>
-<*> Dec # #:#:# LabSZ sshd[#]: PAM service(sshd) ignoring max retries; # > # <*>
-<*> Dec # #:#:# LabSZ sshd[#]: error: Received disconnect from #.#.#.#: #: No more user authentication methods available. [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: Bye Bye [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: disconnected by user <*>
-<*> Dec # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: Closed due to user request. [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=root <*>
-<*> Dec # #:#:# LabSZ sshd[#]: Did not receive identification string from #.#.#.# <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> user <*> from #.#.#.# <*>
-<*> Dec # #:#:# LabSZ sshd[#]: error: Received disconnect from #.#.#.#: #: com.jcraft.jsch.JSchException: Auth fail [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=ftp <*>
-<*> Dec # #:#:# LabSZ sshd[#]: reverse mapping checking getaddrinfo for <*> [#.#.#.#] failed - POSSIBLE BREAK-IN ATTEMPT! <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> user <*> [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.#.dynamic-dsl-ip.omantel.net.om user=root <*>
-<*> Dec # #:#:# LabSZ sshd[#]: message repeated # times: [ Failed password for root from #.#.#.# port # #] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=uucp <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> for <*> from #.#.#.# port # # <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=mysql <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#-#-#.cn-north-#.compute.amazonaws.com.cn <*>
-<*> Dec # #:#:# LabSZ sshd[#]: fatal: Write failed: Connection reset by peer [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: pam_unix(sshd:session): session opened for user fztu by (uid=#) <*>
-<*> Dec # #:#:# LabSZ sshd[#]: Connection closed by #.#.#.# [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: Disconnecting: Too many authentication failures for <*> [preauth] <*>
-<*> Dec # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=sshd <*>
+<*> # #:#:# LabSZ sshd[#]: error: Received disconnect from #.#.#.#: #: org.vngx.jsch.userauth.AuthCancelException: User authentication canceled by user [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: Connection closed by #.#.#.# [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#-#-#-#.fbx.proxad.net <*>
+<*> # #:#:# LabSZ sshd[#]: Did not receive identification string from #.#.#.# <*>
+<*> # #:#:# LabSZ sshd[#]: <*> for <*> from #.#.#.# port # # <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= <*> user=root <*>
+<*> # #:#:# LabSZ sshd[#]: pam_unix(sshd:session): session opened for user <*> by (uid=#) <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=uucp <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=sshd <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.ip-#-#-#.net <*>
+<*> # #:#:# LabSZ sshd[#]: <*> user <*> from #.#.#.# <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=nobody <*>
+<*> # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: disconnected by user <*>
+<*> # #:#:# LabSZ sshd[#]: PAM service(sshd) ignoring max retries; # > # <*>
+<*> # #:#:# LabSZ sshd[#]: pam_unix(sshd:session): session closed for user fztu <*>
+<*> # #:#:# LabSZ sshd[#]: <*> user <*> [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: Client disconnecting normally [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=lfbn-lil-#-#-#.#-#.abo.wanadoo.fr <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=backup <*>
+<*> # #:#:# LabSZ sshd[#]: error: Received disconnect from #.#.#.#: #: com.jcraft.jsch.JSchException: Auth fail [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#-#.ip.afrihost.co.za user=mysql <*>
+<*> # #:#:# LabSZ sshd[#]: Corrupted MAC on input. [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#-#.hinet-ip.hinet.net <*>
+<*> # #:#:# LabSZ sshd[#]: <*> check pass; user unknown <*>
+<*> # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: Closed due to user request. [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: Address #.#.#.# maps to #-#-#-#-dedicated.multacom.com, but this does not map back to the address - POSSIBLE BREAK-IN ATTEMPT! <*>
+<*> # #:#:# LabSZ sshd[#]: <*> for <*> from #.#.#.# port # # # #:#:# LabSZ sshd[#]: pam_unix(sshd:auth): check pass; user unknown <*>
+<*> # #:#:# LabSZ sshd[#]: reverse mapping checking getaddrinfo for <*> [#.#.#.#] failed - POSSIBLE BREAK-IN ATTEMPT! <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=mysql <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#-#-#.cn-north-#.compute.amazonaws.com.cn <*>
+<*> # #:#:# LabSZ sshd[#]: Received disconnect from #.#.#.#: #: Bye Bye [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: Disconnecting: Too many authentication failures for <*> [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: error: Received disconnect from #.#.#.#: #: No more user authentication methods available. [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# <*>
+<*> # #:#:# LabSZ sshd[#]: fatal: <*> failed: Connection reset by peer [preauth] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#-#.hinet-ip.hinet.net user=root <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=root <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=ftp <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#-#-#.mclink.it <*>
+<*> # #:#:# LabSZ sshd[#]: pam_unix(sshd:session): session closed for user hxu <*>
+<*> # #:#:# LabSZ sshd[#]: message repeated # times: [ Failed password for root from #.#.#.# port # #] <*>
+<*> # #:#:# LabSZ sshd[#]: <*> authentication <*> logname= uid=# euid=# tty=ssh ruser= rhost=#.#.#.# user=git <*>

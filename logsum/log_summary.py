@@ -117,11 +117,14 @@ class LogSummary():
         self.num_log_collected = 0
         self.template_freq = {}
         self.template_map = {}
+        self.global_edge_var_id = 0
+        self.edge_addin_attr = None
+        self.get_edge_by_id = None
         return
     
     def register_edge(self,edge,fmt,fmt_type,fmt_regex):
         var = EdgeVar()
-        var.id = edge_addin_attr[str(edge)]["id"]
+        var.id = self.edge_addin_attr[str(edge)]["id"]
         var.frequent = edge.cnt
         var.type = fmt_type
         self.variable_map[var.id] = var
@@ -141,9 +144,9 @@ class LogSummary():
                     continue
                 merged_flag = False
                 for s in fa_core:
-                    if calc_format_compatability(edge_addin_attr[str(e)]["fmt"],edge_addin_attr[str(s)]["fmt"])==0:
-                        l_branch = min(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
-                        r_branch = max(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
+                    if calc_format_compatability(self.edge_addin_attr[str(e)]["fmt"],self.edge_addin_attr[str(s)]["fmt"])==0:
+                        l_branch = min(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
+                        r_branch = max(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
                         self.uf.union(l_branch,r_branch)
                         merged_flag = True
                         break
@@ -155,15 +158,15 @@ class LogSummary():
                     continue
                 merged_flag = False
                 for s in son_core:
-                    if calc_format_compatability(edge_addin_attr[str(e)]["fmt"],edge_addin_attr[str(s)]["fmt"])==0:
-                        l_branch = min(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
-                        r_branch = max(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
+                    if calc_format_compatability(self.edge_addin_attr[str(e)]["fmt"],self.edge_addin_attr[str(s)]["fmt"])==0:
+                        l_branch = min(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
+                        r_branch = max(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
                         self.uf.union(l_branch,r_branch)
                         merged_flag = True
                         break
                     elif graph.END_VALUE in e.v.son or graph.END_VALUE in s.v.son:
-                        l_branch = min(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
-                        r_branch = max(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
+                        l_branch = min(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
+                        r_branch = max(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
                         self.uf.union(l_branch,r_branch)
                         merged_flag = True
                         break
@@ -193,10 +196,10 @@ class LogSummary():
                 next_edge = node.son[key]
                 traversed_count[str(next_edge)] += 1
                 edge_stack.append(next_edge)
-                if edge_addin_attr[str(next_edge)]["is_word_or_symbol"]==True:
+                if self.edge_addin_attr[str(next_edge)]["is_word_or_symbol"]==True:
                     fmt_seq.append(key)
                 else:
-                    fmt_seq.append(edge_addin_attr[str(next_edge)]["fmt"])
+                    fmt_seq.append(self.edge_addin_attr[str(next_edge)]["fmt"])
                 traversed_node_count[str(next_edge.v)] += 1
                 if key!=graph.END_VALUE:
                     node = next_edge.v
@@ -223,10 +226,10 @@ class LogSummary():
                 next_edge = node.son[key]
                 traversed_count[str(next_edge)] += 1
                 edge_stack_tail.append(next_edge)
-                if edge_addin_attr[str(next_edge)]["is_word_or_symbol"]==True:
+                if self.edge_addin_attr[str(next_edge)]["is_word_or_symbol"]==True:
                     fmt_seq.append(key)
                 else:
-                    fmt_seq.append(edge_addin_attr[str(next_edge)]["fmt"])
+                    fmt_seq.append(self.edge_addin_attr[str(next_edge)]["fmt"])
                 traversed_node_count[str(next_edge.v)] += 1
                 if key!=graph.END_VALUE:
                     node = next_edge.v
@@ -235,10 +238,10 @@ class LogSummary():
             
             node = center_edge.u
             fmt_seq = fmt_seq[::-1]
-            if edge_addin_attr[str(center_edge)]["is_word_or_symbol"]==True:
+            if self.edge_addin_attr[str(center_edge)]["is_word_or_symbol"]==True:
                 fmt_seq.append(center_edge.key)
             else:
-                fmt_seq.append(edge_addin_attr[str(center_edge)]["fmt"])
+                fmt_seq.append(self.edge_addin_attr[str(center_edge)]["fmt"])
 
             edge_stack_front = []
             while len(node.fa)>0:
@@ -255,10 +258,10 @@ class LogSummary():
                 next_edge = fa_dict[key]
                 traversed_count[str(next_edge)] += 1
                 edge_stack_front.append(next_edge)
-                if edge_addin_attr[str(next_edge)]["is_word_or_symbol"]==True:
+                if self.edge_addin_attr[str(next_edge)]["is_word_or_symbol"]==True:
                     fmt_seq.append(key)
                 else:
-                    fmt_seq.append(edge_addin_attr[str(next_edge)]["fmt"])
+                    fmt_seq.append(self.edge_addin_attr[str(next_edge)]["fmt"])
                 traversed_node_count[str(next_edge.u)] += 1
                 if key!=graph.BEGIN_VALUE:
                     node = next_edge.u
@@ -292,9 +295,9 @@ class LogSummary():
                         sentence_format[fmts] = [edge_stack[k+e] for e in range(ngram)]
                     else:
                         for e,s in zip(sentence_format[fmts],edge_stack[k:k+ngram]):
-                            if calc_format_compatability(edge_addin_attr[str(e)]["fmt"],edge_addin_attr[str(s)]["fmt"])==0:
-                                l_branch = min(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
-                                r_branch = max(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
+                            if calc_format_compatability(self.edge_addin_attr[str(e)]["fmt"],self.edge_addin_attr[str(s)]["fmt"])==0:
+                                l_branch = min(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
+                                r_branch = max(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
                                 if l_branch!=r_branch:
                                     self.uf.union(l_branch,r_branch)
                                     merge_route_count += 1
@@ -306,9 +309,9 @@ class LogSummary():
                 sentence_format[fmts] = [e for e in edge_stack]
             else:
                 for e,s in zip(sentence_format[fmts],edge_stack):
-                    if calc_format_compatability(edge_addin_attr[str(e)]["fmt"],edge_addin_attr[str(s)]["fmt"])==0:
-                        l_branch = min(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
-                        r_branch = max(edge_addin_attr[str(e)]["id"],edge_addin_attr[str(s)]["id"])
+                    if calc_format_compatability(self.edge_addin_attr[str(e)]["fmt"],self.edge_addin_attr[str(s)]["fmt"])==0:
+                        l_branch = min(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
+                        r_branch = max(self.edge_addin_attr[str(e)]["id"],self.edge_addin_attr[str(s)]["id"])
                         if l_branch!=r_branch:
                             self.uf.union(l_branch,r_branch)
                             merge_route_count += 1
@@ -327,15 +330,15 @@ class LogSummary():
         for edge in graph.edge_set:
             if edge.key==graph.END_VALUE:
                 end_edges.append(edge)
-        end_edges = sorted(end_edges,key=lambda x:edge_addin_attr[str(x)]["id"])
+        end_edges = sorted(end_edges,key=lambda x:self.edge_addin_attr[str(x)]["id"])
         
         for i in range(len(end_edges)):
-            edge_id = edge_addin_attr[str(end_edges[i])]["id"]
+            edge_id = self.edge_addin_attr[str(end_edges[i])]["id"]
             conn_id = self.uf.find(edge_id)-1
             if edge_id==conn_id:
                 if str(end_edges[i]) not in self.template_map:
                     self.template_map[str(end_edges[i])] = "C%d"%(len(self.template_map))
-            target = str(get_edge_by_id[conn_id])
+            target = str(self.get_edge_by_id[conn_id])
             if target not in self.template_freq:
                 self.template_freq[target] = 0
             self.template_freq[target] += end_edges[i].cnt
@@ -353,7 +356,7 @@ class LogSummary():
     def update_var_relationship(self,graph):
         self.unique_var_id = []
         for edge in graph.edge_set:
-            edge_id = edge_addin_attr[str(edge)]["id"]
+            edge_id = self.edge_addin_attr[str(edge)]["id"]
             conn_id = self.uf.find(edge_id)-1
             if edge_id==conn_id:
                 self.unique_var_id.append(edge_id)
@@ -381,34 +384,68 @@ class LogSummary():
         return
     
 
-edge_addin_attr,global_edge_var_id,get_edge_by_id = None,None,None
-
 def register_graph_attributes(graph,logsum,register=True):
-    global global_edge_var_id,edge_addin_attr,get_edge_by_id
-    global_edge_var_id = 0
-    edge_addin_attr = {}
-    get_edge_by_id = {}
+    logsum.global_edge_var_id = 0
+    logsum.edge_addin_attr = {}
+    logsum.get_edge_by_id = {}
     cut_nodes,cut_edges = get_cut_nodes_and_edges(graph.root,graph.edge_set)
     for e in graph.edge_set:
-        edge_addin_attr[str(e)] = {
-            "id":global_edge_var_id,
+        logsum.edge_addin_attr[str(e)] = {
+            "id":logsum.global_edge_var_id,
             "fmt":None,
             "is_word_or_symbol":None,
             "is_cut_edge":False,
             "var":None,
         }
-        get_edge_by_id[global_edge_var_id] = e
+        logsum.get_edge_by_id[logsum.global_edge_var_id] = e
         token = e.value
-        edge_addin_attr[str(e)]["is_word_or_symbol"] = is_word_edge(token) or is_symbol_edge(token)
+        logsum.edge_addin_attr[str(e)]["is_word_or_symbol"] = is_word_edge(token) or is_symbol_edge(token)
         fmt,fmt_type,fmt_regex = convert_to_format(token)
-        edge_addin_attr[str(e)]["fmt"] = fmt
-        edge_addin_attr[str(e)]["is_cut_edge"] = e in cut_edges
+        logsum.edge_addin_attr[str(e)]["fmt"] = fmt
+        logsum.edge_addin_attr[str(e)]["is_cut_edge"] = e in cut_edges
         if register==True:
-            edge_addin_attr[str(e)]["var"] = logsum.register_edge(e,fmt,fmt_type,fmt_regex)
+            logsum.edge_addin_attr[str(e)]["var"] = logsum.register_edge(e,fmt,fmt_type,fmt_regex)
         else:
-            edge_addin_attr[str(e)]["var"] = logsum.varmap[global_edge_var_id]
-        global_edge_var_id += 1
-    return global_edge_var_id,edge_addin_attr,get_edge_by_id
+            logsum.edge_addin_attr[str(e)]["var"] = logsum.varmap[logsum.global_edge_var_id]
+        logsum.global_edge_var_id += 1
+    return 
+
+def search_header_by_frequency(graph,logsum,header_format):
+    ground_truth = header_format.replace(" <Content>","").strip()
+    ground_truth_names = ground_truth.split(" ")
+    header_length = len(ground_truth_names)
+    num_all_logs = list(graph.root.son.values())[0].cnt
+    frequency_error_coef = 0.8
+    eq = Queue()
+    eq.put(graph.root)
+    depth_map = {str(graph.root):0}
+    depth_edge_list = []
+    while not eq.empty():
+        node = eq.get()
+        cur_depth = depth_map[str(node)]
+        for edge in node.son.values():
+            if len(depth_edge_list)<=cur_depth:
+                depth_edge_list.append(set())
+            conn_id = logsum.uf.find(logsum.edge_addin_attr[str(edge)]["id"])-1
+            var = logsum.variable_map[conn_id]
+            depth_edge_list[cur_depth].add(var)
+            if str(edge.v) not in depth_map:
+                eq.put(edge.v)
+                depth_map[str(edge.v)] = cur_depth+1
+    max_header_length = 64
+    header_score = []
+    for k in range(1,min(len(depth_edge_list),max_header_length)):
+        top_score = max([item.frequent/num_all_logs for item in depth_edge_list[k]])
+        header_score.append(top_score)
+    last_split_point = header_length
+    for i in range(1,min(header_length+1,len(header_score))):
+        if header_score[i] < header_score[i-1]*frequency_error_coef:
+            last_split_point = i-1
+    header_label = [j<last_split_point for j in range(len(header_score))]
+    for i in range(len(header_label)):
+        if header_score[i]>=0.99:
+            header_label[i] = True
+    return ground_truth_names,header_label
 
 def match_single_log(graph,log):
     def _match(node,word_vec,pos=0):
@@ -480,7 +517,7 @@ def get_structured_match_result(logsum,graph,log,update_model=True):
         else:
             is_template_word.append(True)
         word = word_vec[pos]
-        var_id = logsum.uf.find(edge_addin_attr[str(edge)]["id"])-1
+        var_id = logsum.uf.find(logsum.edge_addin_attr[str(edge)]["id"])-1
         var = logsum.variable_map[var_id]
         fmt,fmt_type,fmt_regex = convert_to_format(word)
         if update_model==True:
@@ -498,14 +535,14 @@ def get_structured_match_result(logsum,graph,log,update_model=True):
 
         if var.type in Format_Regex:
             format_list.append(fmt_regex["left"]+"<"+str(var.type)+">"+fmt_regex["right"])
-        elif edge_addin_attr[str(edge)]["is_word_or_symbol"]:
+        elif logsum.edge_addin_attr[str(edge)]["is_word_or_symbol"]:
             format_list.append(word)
         else:
             format_list.append(fmt.replace("\\#","#").replace("\\&","*").replace("\\*","*"))
             
     formats = " ".join(format_list)
-    leaf_id = logsum.uf.find(edge_addin_attr[res['success_flag']]["id"])-1
-    leaf_edge = get_edge_by_id[leaf_id]
+    leaf_id = logsum.uf.find(logsum.edge_addin_attr[res['success_flag']]["id"])-1
+    leaf_edge = logsum.get_edge_by_id[leaf_id]
     match_obj = {
         "TemplateID":logsum.template_map[str(leaf_edge)],
         "Frequency":round(logsum.template_freq[str(leaf_edge)]/logsum.num_log_collected,8),
@@ -517,40 +554,3 @@ def get_structured_match_result(logsum,graph,log,update_model=True):
         "ValueDict":var_dict,
     }
     return match_obj
-
-def get_conn_id(logsum,edge):
-    conn_id = logsum.uf.find(edge_addin_attr[str(edge)]["id"])-1
-    return conn_id
-
-def search_header_by_frequency(graph,logsum,header_format):
-    ground_truth = header_format.replace(" <Content>","").strip()
-    ground_truth_names = ground_truth.split(" ")
-    header_length = len(ground_truth_names)
-    num_all_logs = list(graph.root.son.values())[0].cnt
-    eq = Queue()
-    eq.put(graph.root)
-    depth_map = {str(graph.root):0}
-    depth_edge_list = []
-    while not eq.empty():
-        node = eq.get()
-        cur_depth = depth_map[str(node)]
-        for edge in node.son.values():
-            if len(depth_edge_list)<=cur_depth:
-                depth_edge_list.append(set())
-            conn_id = get_conn_id(logsum,edge)
-            var = logsum.variable_map[conn_id]
-            depth_edge_list[cur_depth].add(var)
-            if str(edge.v) not in depth_map:
-                eq.put(edge.v)
-                depth_map[str(edge.v)] = cur_depth+1
-    print(ground_truth_names,header_length)
-    max_header_length = 64
-    header_score = []
-    for k in range(1,min(len(depth_edge_list),max_header_length)):
-        top_score = max([item.frequent/num_all_logs for item in depth_edge_list[k]])
-        header_score.append(top_score)
-        print("Header:" if k<=header_length else "Content:",top_score)
-    return ground_truth_names,header_score
-
-
-
