@@ -69,3 +69,10 @@ def load_header_groundtruth(filename):
 	with open(filename,"r") as f:
 		data = json.load(f)
 	return data
+
+def write_structured_logs(data,filename):
+	json_str = json.dumps(data)
+	with open(filename,"w+") as f:
+		#json.dump(f,data)
+		f.write(json_str)
+	return

@@ -115,10 +115,16 @@ def count_unmatch(result):
 	return result,unmatched
 
 def get_accuracy(match_label, match_result):
-	match_label = np.array(match_label)
-	match_result = np.array(match_result)
-	series_groundtruth = pd.Series(match_label[:,1],index=match_label[:,0])
-	series_parsedlog = pd.Series(match_result[:,1],index=match_result[:,0])
+	if type(match_label)!=pd.Series:
+		match_label = np.array(match_label)
+		series_groundtruth = pd.Series(match_label[:,1],index=match_label[:,0])
+	else:
+		series_groundtruth = match_label
+	if type(match_result)!=pd.Series:
+		match_result = np.array(match_result)
+		series_parsedlog = pd.Series(match_result[:,1],index=match_result[:,0])
+	else:
+		series_parsedlog = match_result
 	total_pairs = len(series_groundtruth)*(len(series_groundtruth)-1)/2
 	series_groundtruth_valuecounts = series_groundtruth.value_counts()
 	real_pairs = 0
@@ -146,10 +152,10 @@ def get_accuracy(match_label, match_result):
 			if count > 1:
 				accurate_pairs += count*(count-1)/2 #scipy.misc.comb(count, 2)
 
-	precision = float(accurate_pairs) / parsed_pairs
-	recall = float(accurate_pairs) / real_pairs
-	f_measure = 2 * precision * recall / (precision + recall)
-	rand_index = 1.0 - float(parsed_pairs+real_pairs-2*accurate_pairs)/total_pairs
+	precision = float(accurate_pairs) / max(parsed_pairs,1)
+	recall = float(accurate_pairs) / max(real_pairs,1)
+	f_measure = 2 * precision * recall / max(precision + recall, 1e-16)
+	rand_index = 1.0 - float(parsed_pairs+real_pairs-2*accurate_pairs) / max(total_pairs,1)
 	TP = accurate_pairs
 	FP = parsed_pairs - accurate_pairs
 	FN = real_pairs - accurate_pairs
@@ -165,19 +171,19 @@ def get_accuracy(match_label, match_result):
 
 
 def evaluate_header_extraction(graph,logsum,header_format):
-    ground_truth_names,header_score = search_header_by_frequency(graph,logsum,header_format)
-    threshold_header_split = 1.5
-    total_field = 0
-    correct_field = 0
-    for i in range(min(len(ground_truth_names),len(header_score))-1):
-        distance = header_score[i]-header_score[i+1]
-    for i in range(len(ground_truth_names)):
-        num_field = re.findall(r'<\w+>',ground_truth_names[i])
-        if True:
-            correct_field += num_field
-        total_field += num_field
-    result["correct"] = (correct_field,total_field)
-    return result
+	total_field = 0
+	correct_field = 0
+	ground_truth_names,header_label = search_header_by_frequency(graph,logsum,header_format)
+	for i in range(len(ground_truth_names)):
+		num_field = len(re.findall(r'<\w+>',ground_truth_names[i]))
+		if header_label[i]==True:
+			correct_field += num_field
+		total_field += num_field
+	result = {
+		"correct":(correct_field,total_field),
+	}
+	print("Correct / Total : %d / %d"%(result["correct"][0],result["correct"][1]))
+	return result
 
 
 def evaluate_variable_mapping(map_label_filename,var_index):
@@ -201,8 +207,11 @@ def evaluate_variable_mapping(map_label_filename,var_index):
 				item = word_list[j]
 				if re.match(var_format,item):
 					num_of_variable += 1
-					truth_var_index_list.append([num_of_variable,int(item[2:-1])])
-					predict_var_index_list.append([num_of_variable,var_index[log_id][j]])
+					truth_var_index_list.append(int(item[2:-1]))
+					predict_var_index_list.append(var_index[log_id][j])
+	
+	truth_var_index_list = pd.Series(truth_var_index_list,index=range(len(truth_var_index_list)))
+	predict_var_index_list = pd.Series(predict_var_index_list,index=range(len(predict_var_index_list)))
 	evaluate_result = get_accuracy(truth_var_index_list,predict_var_index_list)
 	print("Evaluation Result of Vairable-Field Mapping:")
 	print("\tRandIndex: %.6lf"%evaluate_result["rand-index"])
@@ -246,11 +255,8 @@ def evaluate_word_classification(log_data,log_content,parsing_truth,
 		if graph is not None and logsum is not None:
 			match_obj = logsum_pre_matched_result[log_id]
 			if match_obj["Unmatched"]==False:
-				#print(match_obj["FieldList"])
-				#print(">>",len(match_obj["FieldList"]),header_length,len(log_))
-				#print(log_)
 				for i in range(header_length,len(log_)):
-					var = match_obj["FieldList"][i]
+					var = match_obj["FieldList"][i] if i<len(match_obj["FieldList"]) else None
 					if var is None:
 						continue
 					conn_id = logsum.uf.find(var.id)-1
@@ -268,8 +274,6 @@ def evaluate_word_classification(log_data,log_content,parsing_truth,
 		word_flag0 = word_flag0[:-1]
 		log_.pop()
 		y_true = np.array([1 if word_flag0[i] else 0 for i in range(header_length,len(log_))])
-
-		# save_parse_res.append([log_[header_length:],y_pred,y_true])
 
 		tp = np.sum(y_pred*y_true)
 		fp = np.sum(y_pred*(1-y_true))
